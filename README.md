@@ -1,5 +1,5 @@
 
-# LES 2017 Public GitHub Repository (Vegan Outreach)
+# LES 2017 Public GitHub Repository
 
 This is the analysis hub for the 2017 Leafletting Effectiveness
 Survey, a joint effort of Vegan Outreach and partners. The repo
