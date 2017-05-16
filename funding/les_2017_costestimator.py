@@ -1,23 +1,20 @@
 
-
-
-
 # =====================================================================
 # =====================================================================
 # Inputs
 
 # Define price variables
-price_booklet = 0.05 # USD per item
+price_booklet = 0.07 # USD per item
 price_sticker = 0.15 # USD per item, derived from email titled "LES Article"
                     # which stated "[I] filled in the cost of the stickers
                     # for a 50K run (~$8K)", 8000 / 50000. = ~.15
 price_labor = 15 # USD per hour
-price_incentive = 10 # USD per survey
+price_incentive = 15 # USD per survey
 
 # Define survey variables
 R_RATE = 0.03 # survey response rate
-NB_TEST = 90000
-NB_CNTRL = 90000
+NB_TEST = 75000
+NB_CNTRL = 75000
 NB_TOTAL  = NB_TEST + NB_CNTRL
 
 print("\n### Vegan Outreach Budget Summary for LES")
@@ -83,7 +80,7 @@ incentive_cost = NB_TOTAL * R_RATE * price_incentive
 print("\nSURVEY INCENTIVES")
 print("   A ${0} incentive is offered for students".format(price_incentive))
 print("   recieving a booklet to take the survey.")
-print("   An estimated {0} of 1000 students will respond ({1} response rate)".format(R_RATE * 1000, R_RATE))
+print("   An estimated {0} students will respond ({1} response rate)".format(R_RATE * NB_TOTAL, R_RATE))
 print("   ... ACE provides incentives: {0}".format(incentive_cost))
 
 ace_total += incentive_cost
