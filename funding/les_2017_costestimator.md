@@ -1,4 +1,7 @@
 
+# Current Output of les_2017_costestimator.py
+
+```
 ### Vegan Outreach Budget Summary for LES
    with partners Animal Charity Evaluations,
    The Humane League, and 80K Hours.
@@ -35,3 +38,4 @@ SURVEY INCENTIVES
    ...Humane League: $4500.0
    ...80K Hours: $5250.0
    ...ACE: $90000.0 <-- ACE Grant Request
+```
