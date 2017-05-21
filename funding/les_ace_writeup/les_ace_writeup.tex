@@ -35,6 +35,7 @@
 \newcommand{\stickercost}[0]{\textsc{22500}}% document class option name                  
 \newcommand{\giftcardnum}[0]{\textsc{9000}}                                   
 \newcommand{\giftcardcost}[0]{\textsc{67500}}
+\newcommand{\schoolnum}[0]{\textsc{90}}
 
 \begin{document}
 
@@ -86,10 +87,6 @@ particularly to zero (the \textbf{``One Week Vegan"}).
 %  \label{fig:sitsdepiction}
 %\end{marginfigure}
   
-% ---------------------------------------
-% ---------------------------------------
-%\section{Introduction}\label{sec:intro}
-
 \newthought{The Leafleting Effectiveness Survery (\les)} will attempt
 to quantify the impact of pro-animal leafleting on the later 
 consumption of animal products. In particular it will look for 
@@ -118,51 +115,37 @@ to share the results (\$\websitecost).
 \fontsize{9pt}{9pt}\selectfont
 \vskip 1.5em
 \noindent
-\textsc{\sitsshort~ At A Glance}
+\textsc{\les~ At A Glance}
 \noindent
 \begin{itemize}
-    \item[] Technology development effort to enable the collection of 
-            cinematic footage of robotic spacecraft operating at-location
-            in deep space. Ultimate goal is to develop a self-contained 
-            instrument capable of adoption into typical deep space mission payloads.
-    \item[]
-    \item[] The \sitsshort~ Imaging Instrument} (referred to as the \textit{instrument}) 
-            is a self-contained unit that can be mounted 
-            as spacecraft payload. It protects and deploys 
+    \item[] Utilizes a pre- and post- survery to measure the 
+            impact of leafleting on self-reported animal product 
+            consumption.
+    \item[] Pilot studies indicate that a brightly colored sticker 
+            attached to leaflets advertising an incentivised survey
+            (\$5 for each survey, \$10 total per particiapnt) can 
+            generate a response rate of roughly 3\%.
+    \item[] A total of \totalbooklets~ will be handed out (half test, 
+            half-control), powering the study to detect a conversion of
+            1\% or greater of the test population into a one week vegan.
+    \item[] The leaflets will be handed out at \schoolnum~ schools in
+            September 2017. Recipients have one week after the leaflets
+            are handed out to complete the Part 1 survey. An email will
+            be sent out to students who completed Part 1 in 
+            mid-November, inviting them to fill out the Part 2 survey.
 \end{itemize}
 }
 \end{fullwidth}
 
-\clearpage
-\sitslong~ has been sponsored the last 18 months by JPL's Office of 
-Formulation (formerly the JPL Innovation Foundry). With their support, 
-\sitsshort~ has received a NASA New Technology Report and provisional patent, passed through both 
-A-Team and TeamXc study sessions, and emerged as a well developed concept 
-with a point-engineering design.
-
 % ---------------------------------------
 % ---------------------------------------
-\section{Concept of Operations}\label{sec:conops}
+\section{Background}\label{sec:background}
 
-%\begin{itemize}
-%\color{red}
-%    \item 
-%\end{itemize}
-
-The \sitsshort~ system is designed to collect footage of its host spacecraft
-operating at location. It does this by tasking an individual
-\textit{imager} to fly a \texbf{media collection sortie}. These sorties are designed
-in advance by analysts on the ground and uplinked to the \textit{instrument}. They identify
-the time at which the \textit{imager} should be deployed and specify the trajectory and 
-attitude profile that it needs to fly to collect the desired footage. There are 
-three distinct phases involved in executing a sortie.
-
-\begin{marginfigure}[-1.5 in]%
-  \includegraphics[width=\textwidth]{sitscoop.png}
-  \caption{\sitsshort~ \textit{imager} after deployment from the \textit{instrument} as it collects footage of the
-  host spacecraft.}
-  \label{fig:sitscoop}
-\end{marginfigure}
+\begin{itemize}
+\color{red}
+    \item Talk here about previous leafleting studies
+    \item Talk here about pilot studies.
+\end{itemize}
 
 \begin{fullwidth}
 {  
@@ -188,190 +171,84 @@ Phase 1: Deployment
 }
 \end{fullwidth}
 
-\begin{table*}
-    \fontfamily{ppl}\selectfont
-  \begin{tabular}{lll}
-    \toprule
-    Design Component & Maturity & Description \\
-    \midrule
-    Integrated Design & TRL 3 & TeamXc point design for \sitsshort~ system\\
-    \midrule
-    Hardware: & & \\
-    Camera Stack & COTS & Cameras (Omnivision) and processors (Snapdragon) \\
-    Local Communication & COTS & \textit{Instrument}-\textit{imager} communication via Qualcom Wifi Chips\\
-    GNC & COTS & Sinclair reaction wheels, Epson IMU, DSSP thrusters \\
-    Power & COTS & Panasonic Lithium-Ion Rechargeable Batteries \\
-    \midrule
-    Software: & & \\
-    Monte & TRL 9 & JPL ground software for trajectory design and navigation \\   
-    AutoNav & TRL 9 & JPL flight software for autonomous spacecraft navigation \\
-    \bottomrule
-  \end{tabular}
-  \vskip 1.5em
-  \caption{\sitsshort~ Technology Maturity Levels}
-  \label{tab:dmat}
-\end{table*}
+
 
 % ---------------------------------------
-\subsection{Collecting and Transmitting Footage}
+% ---------------------------------------
+\section{Parameters}
 
-Because the \textit{imagers} are discarded after a single use, emphasis has been placed on 
-reducing both their physical size and cost so that more can be carried from 
-mission start. Hardware is liberally sourced from the commercial cell 
-phone market (Table \ref{tab:camstack}) which invests billions of dollars 
-every year in just these initiatives (miniaturization and cost reduction). 
-
-Each \textit{imager} is equipped with two cameras that independently stream
-footage to the \textit{instrument}. Each camera has a dedicated Wifi chipset and
-antenna to ensure a data-rate high enough to stream 4K video. On the receiving
-end, the \textit{instrument} has four independent wifi receivers (chipset and antenna) which 
-allows for the simultaneous operation of up to two \textit{imagers} (two dedicated 
-channels for each \textit{imager}). The \textit{imagers} do not store any video; everything is 
-streamed directly to the \textit{instrument} where it is logged in onboard storage and 
-processed for downlink. As downlink becomes available, the \textit{instrument} queues 
-up and sends data down through the main host spacecraft antenna.
-
-\begin{table}
-  \fontfamily{ppl}\selectfont
-  \begin{tabular}{ll}
-    \toprule
-    Component & Description \\
-    \midrule
-    Camera &  Omnivision 13850 13.2 MP cell phone camera\\
-    Processor & Snapdragon 820 Android processor \\
-    Wifi Chipset & Qualcom AR9390 Chip 450Mbps \\ 
-    Wifi Antenna & Johanson Technology 2450AT18B100 antenna\\
-   \bottomrule
-  \end{tabular}
-  \caption{\sitsshort~ Camera Stack.}
-  \label{tab:camstack}
-\end{table}
-
-\clearpage
-{
-\fontsize{9pt}{9pt}\selectfont
-\vskip 1.5em
-\noindent
-\textsc{Camera Stack Design Summary}
-\noindent
 \begin{itemize}
-    \item[] An S-Band (2.4 GHz) Wifi protocol is used for communication between the \textit{imagers} and \textit{instrument}.
-    \item[] Each \textit{imager} has two independent cameras and streaming pipelines capable of
-    processing 4K video (30 fps) or slow-motion 720P video (240 fps). 
-    \begin{itemize}
-      \item[] \textit{Imager} streaming pipeline consists of Omnivision Cameras (x2), 
-      Snapdragon Processors (x2), Qualcomm Wifi Chips (x2), Johanson Antennas (x2)
-    \end{itemize}
-    \item[] The \textit{instrument} has four independent receivers capable of supporting 
-    two simultaneously operating \textit{imagers}.
-    \begin{itemize}
-      \item[] \textit{Instrument} receiving pipeline consists of Qualcomm Wifi Chips (x4) and 
-       Johanson Antennas (x4).
-    \end{itemize}
-    \item[] Footage is saved on board the \textit{instrument} and preprocessed for 
-    eventual downlink to Earth via the host spacecraft communication system.
+\color{red}
+    \item Put the relevant power calculations in here.  	
 \end{itemize}
-\vskip 1.5em
-}
+
 
 
 % ---------------------------------------
-\subsection{Autonomous operation}
-
-JPL has an astrodynamic software toolkit called Monte\footnote{montepy.jpl.nasa.gov} 
-that is used for high-accuracy trajectory design and navigation. The spacecraft 
-trajectories produced by Monte are routinely used by science instrument operators to design 
-their observation profiles. Monte can be configured to do an analogous task for
-\sitsshort, which is to help operators design \textit{imager} sortie trajectories that 
-capture dynamic cinematic shots of the spacecraft and its surrounding environment.
-These trajectories will be created well in advance of the actual sortie, and 
-uplinked for the \textit{imagers} to fly autonomously. 
-
-After an \textit{imager} has been ejected, it begins flying the sortie only after it
-has cleared a minimum-operational distance from the host spacecraft.\footnote{The current
-design has this set at 3m, but it can be adjusted if the host spacecraft
-has extended features (solar panels, magnetic booms) that need to be 
-avoided.} At this point, the \textit{imager} uses its onboard IMU to dead-recon flight
-of the reference trajectory. JPL's AutoNav flight software is used to adjust
-the pointing of the \textit{imager} cameras in real time, to ensure the integrity of
-the shot even if the \textit{imager} departs from its nominal flight plan.\footnote{AutoNav has 
-flight heritage on several NASA missions, including Deep Impact and Stardust missions, where it was used with great 
-success.} 
-
-After the sortie is complete, the \textit{instrument} will autonomously process the collected
-footage and segment it for downlink. Initially, only a low-resolution version of the
-footage will be returned, allowing operators to prioritize in what order the 
-full-resolution segments will be returned.
-
-\clearpage
 % ---------------------------------------
-% ---------------------------------------
-\section{Path to Flight}
+\section{Plan and Budget}
 
-%\begin{itemize}
-%\color{red}
-%    \item Any preliminary studies that should be undertaken in advance of a 
-%    decision to proceed in order to determine the feasibility, sensitivity, 
-%    cost, or other characteristics of the new science investigation.	
-%    \item List of payload services required from integration to operations, including 
-%    but not limited to cleanliness level, unique test and checkout, temperature, access, 
-%    power and environment.
-%    \item Identification of any hazardous, explosive, chemical, or biological aspects of the
-%    payload.
-%\end{itemize}
-
-In order for \sitsshort~ to be ready for flight on-board NSTP-Sat in 2021, an official,
-funded \sitslong~ project needs to be established in FY18. The first order of business 
-is to alter the system design to fit the NSTP-Sat paradigm. The current design is 
-a merged version of the \sitsshort~ concept into a 12U CubeSat (6U for \sitsshort~ 
-and 6U for the CubeSat bus) appropriate for flight as a standalone NASA Technology 
-Demonstration Mission. Adapted to NSTP-Sat, \sitsshort~ would drop off the 6U bus and 
-assume its proper form as a true payload instrument. During this redesign, the 
-\textit{instrument} can be custom-fitted to NSTP-Sat's size, weight, and power 
-requirements.\footnote{The overall size and weight of the resulting \textit{instrument} can
-be adjusted by adding or removing \textit{imagers} from its manifest.} 
+\begin{itemize}
+\color{red}
+    \item Outline the study plan (partners, schedule, etc)
+    \item Put in full study budget.  	
+\end{itemize}
 
 \begin{fullwidth}
 {
 \fontsize{9pt}{9pt}\selectfont
 \vskip 1.5em
 \noindent
-\textsc{Timeline for Developing Flight Instrument}
+\textsc{\les~ Study Timeline}
 \noindent
 \begin{itemize}
-    \item[\textbf{ATP}] For project start beginning FY18.
-    \item[\textbf{ATP + 3 months}] Complete engineering redesign.
-    \item[\textbf{ATP + 4 months}] SRR.
-    \item[\textbf{ATP + 9 months}] Finish full redesign, begin hardware prototype.
-    \item[\textbf{ATP + 11 months}] PDR.
-    \item[\textbf{ATP + 16 months}] Refine design based on prototype testing. Begin work on flight
-     hardware. 
-    \item[\textbf{ATP + 19 months}] CDR.
-     
-    \item[\textbf{ATP + 26 months}] Complete flight hardware, begin internal testing. 
-    \item[\textbf{ATP + 29 months}] Deliver to NSTP-Sat Payload Integration Center.
-    \item[\textbf{ATP + 31 months}] Start Payload Integration.
+    \item[\textbf{Aug  14}] Ship test / control booklets and stickers to leafleters.
+    \item[\textbf{Aug  28}] Complete applying stickers to booklets.
+    \item[\textbf{Sep  5}] Begin handing out booklets                           
+    \item[\textbf{Sep 19}] Complete handing out leaflets 
+    \item[\textbf{Sep 25}] Close Part 1 survey 
+    \item[\textbf{Nov 11}] Send invitations for Part 2 survey 
+    \item[\textbf{Nov 18}] Close Part 2 survey. 
 \end{itemize}
 }
 \end{fullwidth}
 
-Once \sitsshort~~ has been redesigned, an accelerated hardware development program
-needs to be initiated. Because so much of the system is built on high-TRL or COTS 
-technology, rapid fabrication of the \textit{instrument} and \textit{imagers} is feasible in 
-a very short timeframe. During the prototyping phase, manufacturers will be 
-engaged to help reconfigure their products to further miniaturize the \textit{imager} 
-design, which will in turn reduce the size of the overall instrument package.
-Additionally, the non-space hardened components will be vacuum and radiation tested 
-and any which show signs of failing before the planned \textit{imager} lifetime of 15 minutes
-can be replaced. Lessons learned from the prototype will be wrapped into the final design
-and fabrication of a flight-ready instrument.
+
+\begin{table*}
+  \fontfamily{ppl}\selectfont
+  \begin{tabular}{lll}
+    \toprule
+    Category  & Cost & Partner \\
+    \midrule
+    
+    Attaching stickers  & 22500.0 & Vegan Outreach\\                
+    
+    Leafleting (Small School)  & 4500.0 & Vegan Outreach\\                
+    
+    Leafleting (Large School)  & 4500.0 & Humane League\\                
+    
+    \midrule
+                               
+    Test Booklets  & 5250.0 & Vegan Outreach\\                                    
+                               
+    Control Booklets  & 5250.0 & Vegan Outreach\\                                    
+                               
+    Stickers  & 22500.0 & ACE\\                                    
+         
+    \midrule
+                               
+    Gift Cards  & 67500.0 & ACE\\                                    
+         
+    \bottomrule
+  \end{tabular}
+  \vskip 1.5em
+  \caption{Detailed \les~ Budget}
+  \label{tab:budget}
+\end{table*}
 
 % ---------------------------------------
 % ---------------------------------------
 %\section{Closing Thoughts}\label{sec:close}
-
-
-
 
 
 \end{document}  

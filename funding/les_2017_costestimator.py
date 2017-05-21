@@ -1,4 +1,14 @@
 
+import os
+from os.path import join, exists
+from jinja2 import Environment, FileSystemLoader
+
+# Set up jinja rendering environment
+repo_dir = "/Users/smithj1/LES_2017/"
+template_dir = join(repo_dir, "funding/templates")
+env = Environment(loader=FileSystemLoader(template_dir))
+TEX_TABLE = True
+
 # =====================================================================
 # =====================================================================
 # Inputs
@@ -40,16 +50,30 @@ num_schools = NB_TOTAL / BPD_ratio
 num_days = num_schools
 labor_total = num_days * price_labor * 8.
 
+large_school_cost = BPD_large_ratio * labor_total
+small_school_cost = BPD_small_ratio * labor_total
+
+
 print("\nLABOR")
 print("   With a Booklet Per Day (BPD) average of {0}".format(BPD_large))
 print("   for large schools and {0} for small schools,".format(BPD_small))
 print("   a total of {0} schools will need to be visited".format(num_schools))
 print("   to hand out the full {0} study complement of books.".format(NB_TOTAL))
-print("   ... Vegan Outreach Labor Donation: ${0}".format( BPD_small_ratio * labor_total ))
-print("   ... The Humane League Labor Donation: ${0}".format( BPD_large_ratio * labor_total))
+print("   ... Vegan Outreach Labor Donation: ${0}".format( small_school_cost ))
+print("   ... The Humane League Labor Donation: ${0}".format( large_school_cost))
 
-vo_total += BPD_small_ratio * labor_total
-thl_total += BPD_large_ratio * labor_total
+vo_total += small_school_cost
+thl_total += large_school_cost
+
+sticker_rate = 100. # per hour
+sticker_labor_cost = ( NB_TOTAL / sticker_rate ) * price_labor
+
+# For table
+labor_budget = [
+    ("Attaching stickers", sticker_labor_cost, "Vegan Outreach"),
+    ("Leafleting (Small School)", small_school_cost, "Vegan Outreach"),
+    ("Leafleting (Large School)", large_school_cost, "Humane League"),
+    ]
 
 # =====================================================================
 # =====================================================================
@@ -71,6 +95,12 @@ vo_total += test_cost
 cntrl_total += cntrl_cost
 ace_total += sticker_cost
 
+material_budget = [
+    ("Test Booklets", test_cost, "Vegan Outreach"),
+    ("Control Booklets", cntrl_total, "Vegan Outreach"),
+    ("Stickers", sticker_cost, "ACE"),
+    ]
+
 # =====================================================================
 # =====================================================================
 # Incentive donations (ACE)
@@ -85,6 +115,9 @@ print("   ... ACE provides incentives: {0}".format(incentive_cost))
 
 ace_total += incentive_cost
 
+incentive_budget = [
+    ("Gift Cards", incentive_cost, "ACE")
+    ]
 
 # =====================================================================
 # =====================================================================
@@ -100,3 +133,16 @@ print("   ...Vegan Outreach: ${0}".format(vo_total))
 print("   ...Humane League: ${0}".format(thl_total))
 print("   ...80K Hours: ${0}".format(cntrl_total))
 print("   ...ACE: ${0} <-- ACE Grant Request".format(ace_total))
+
+# =====================================================================
+# =====================================================================
+# Summaries
+
+if TEX_TABLE:
+    tex_table = env.get_template('budget_textable.tmpl')
+    print tex_table.render(
+        labor_budget=labor_budget,
+        material_budget=material_budget,
+        incentive_budget=incentive_budget
+        )
+

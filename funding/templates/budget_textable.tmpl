@@ -1,0 +1,25 @@
+
+\begin{table*}
+  \fontfamily{ppl}\selectfont
+  \begin{tabular}{lll}
+    \toprule
+    Category  & Cost & Partner \\
+    \midrule
+    {% for category, cost, partner in labor_budget %}
+    {{category}}  & {{cost}} & {{partner}}\\                
+    {% endfor %}
+    \midrule
+    {% for category, cost, partner in material_budget %}                           
+    {{category}}  & {{cost}} & {{partner}}\\                                    
+    {% endfor %}     
+    \midrule
+    {% for category, cost, partner in incentive_budget %}                           
+    {{category}}  & {{cost}} & {{partner}}\\                                    
+    {% endfor %}     
+    \bottomrule
+  \end{tabular}
+  \vskip 1.5em
+  \caption{Detailed \les~ Budget}
+  \label{tab:budget}
+\end{table*}
+
