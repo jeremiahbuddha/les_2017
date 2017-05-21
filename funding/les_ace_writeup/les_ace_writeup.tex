@@ -3,7 +3,7 @@
 \title{Leafleting Effectiveness Survey (LES)}
 \author[Jack Norris \& Eric Roberts \& Jonathon Smith]{Jack Norris\thanks{Executive Director, Vegan Outreach} \& Eric Roberts\thanks{Research Manager, California Department of Health Services} \& Jonathon Smith\thanks{Technical Group Supervisor, Jet Propulsion Laboratory}}
 
-%\date{28 March 2010} % without \date command, current date is supplied
+\date{June 2017} % without \date command, current date is supplied
 %\geometry{showframe} % display margins for debugging page layout
 
 \usepackage{graphicx} % allow embedded images
@@ -29,9 +29,12 @@
 \newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
 \newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
 
-\newcommand{\sitslong}[0]{\textsc{Spacecraft In The Shot}}% document class option name
-\newcommand{\sitsshort}[0]{\textsc{Sits}}% document class option name
-
+%\newcommand{\sitslong}[0]{\textsc{Spacecraft In The Shot}}% document class option name
+\newcommand{\les}[0]{\textsc{LES}}% document class option name
+\newcommand{\totalbooklets}[0]{\textsc{130000}}% document class option name                  
+\newcommand{\stickercost}[0]{\textsc{22500}}% document class option name                  
+\newcommand{\giftcardnum}[0]{\textsc{9000}}                                   
+\newcommand{\giftcardcost}[0]{\textsc{67500}}
 
 \begin{document}
 
@@ -48,30 +51,31 @@
 % ---------------------------------------
 \begin{abstract}
 \noindent
-\sitslong~ (\sitsshort) is a technology initiative that will empower NASA to 
-document the most important milestones in robotic deep space exploration 
-in a visceral and compelling way. It will equip spacecraft with the 
-\textbf{\sitsshort~Imaging Instrument}, which deploys small imagers 
-in the vicinity of the host spacecraft. These imagers, which are a 
-fraction the size of a 1U CubeSat, autonomously collect footage of the 
-spacecraft during important mission events. For instance, 
-the imagers can be deployed to record HD video of the Europa 
-spacecraft during a close approach to Europa 
-(Fig. \ref{fig:sitsdepiction}). 
 
-A design has been developed that integrates the \sitsshort~ concept 
-into a 12U CubeSat for potential flight as a NASA Technology Demonstration 
-Mission. This existing design can serve as the starting point for an 
-NSTP-Sat adaptation, where the CubeSat bus can be eliminated and the 
-rest of the hardware consolidated into a standalone payload instrument. 
+Near the beginning of Fall semester 2017, a total of \totalbooklets~ 
+students will be handed a leaflet. Half the leaflets will have a
+pro animal rights message (\textbf{test books}), half will be on a
+non-animal related topic (\textbf{control books}). Each booklet will have a
+sticker advertising a ``\$5 Starbucks or Amazon Gift Card for taking
+brief survey" (\textbf{Part 1 Survey}). Students answering the survey will be 
+asked about their current consumption of animal products (\textbf{base rate}) 
+and given a gift card. Two months later, just before Thanksgiving 
+break, these same students will receive and email, "Thanks for taking 
+our previous survey! We have a few more questions, of course for 
+another \$5 giftcard!" (\textbf{Part 2 Survey}). Students will again
+be asked about their current animal consumption. The data will
+be examined to see if the pro-animal leaflets reduce the amount of
+animal products consumed by the students (\textbf{post-test rate}), 
+particularly to zero (the \textbf{``One Week Vegan"}). 
+
 \end{abstract}
 
-\begin{marginfigure}[-2 in]%
-  \includegraphics[width=\textwidth]{sitspic3.png}
-  \caption{Illustration of \sitsshort~ footage of Europa spacecraft
-  during Europa close approach.}
-  \label{fig:sitsdepiction}
-\end{marginfigure}
+%\begin{marginfigure}[-2 in]%
+%  \includegraphics[width=\textwidth]{sitspic3.png}
+%  \caption{Illustration of \sitsshort~ footage of Europa spacecraft
+%  during Europa close approach.}
+%  \label{fig:sitsdepiction}
+%\end{marginfigure}
 
 %\begin{marginfigure}[0 in]%
 %  \includegraphics[width=\textwidth]{sitsdepiction.png}\\
@@ -86,15 +90,28 @@ rest of the hardware consolidated into a standalone payload instrument.
 % ---------------------------------------
 %\section{Introduction}\label{sec:intro}
 
-\newthought{NASA's 2014 Strategic Plan explains} that its vision is to 
-``reach for new heights and reveal the unknown for the benefit of humankind."
-\sitsshort~ will give humankind a revolutionary experience by rolling back 
-the curtain on our deep space operations and visually documenting our 
-spacecraft as they explore the solar system. It does this through the 
-\textbf{\sitsshort~ Imaging Instrument}, a spacecraft payload instrument 
-that contains modern filmmaking equipment and that allows operators on 
-the ground to design and capture high-definition video sequences of 
-spacecraft operating in deep space.  
+\newthought{The Leafleting Effectiveness Survery (\les)} will attempt
+to quantify the impact of pro-animal leafleting on the later 
+consumption of animal products. In particular it will look for 
+``one week vegans", or leaflet recipients who report no consumption of animal 
+products in the post-test survey week. 
+The relationship between leafleting and one week vegans is of real
+concern for the organization leading \les, Vegan Outreach (VO). VO's
+primary intervention on behalf of animals is to hand out pro-vegetarian,
+anti-speciest leaflets to college students. Verifying the impact of this
+intervention has become an organizational priority at the highest level.
+VO also understands that this is a general concern of the broader
+animal protection community, and has sought the support and advice of
+partner organizations to carry out \les.
+
+In particular, VO seeking the participation of Animal Charity 
+Evaluators (ACE) as a partner on \les. This document outlines VO's formal
+request for a grant from ACE's Animal Advocacy Research Fund. VO is 
+looking to ACE to finance (1) the printing of \totalbooklets~ 
+survey-advertising stickers (\$\stickercost) (2) the purchase of
+\giftcardnum~ gift cards to distribute as incentives for taking the 
+survery (\$\giftcardcost), and (3) the creation of a public website
+to share the results (\$\websitecost).
 
 \begin{fullwidth}
 {
@@ -112,19 +129,6 @@ spacecraft operating in deep space.
     \item[] The \sitsshort~ Imaging Instrument} (referred to as the \textit{instrument}) 
             is a self-contained unit that can be mounted 
             as spacecraft payload. It protects and deploys 
-            \sitsshort~ Imagers} (referred to as \textit{imagers}),
-            which autonomously collect cinematic footage of the host spacecraft.
-            The \textit{imagers} live-stream footage (4K video and stills) to the \textit{instrument}, 
-            where it is stored until spacecraft downlink is available. \textit{Imagers} are 
-            discarded after use, they do not re-dock.
-    \item[]        
-    \item[] Seed funding has been provided by JPL's Office of Formulation 
-            (formerly the JPL Innovation Foundry). \sitsshort~ has graduated from JPL's A-Team 
-            and TeamXc rapid design programs. The current point-design has the 
-            \textit{instrument} merged into a 12U CubeSat that can fly as
-            an independent NASA Technology Demonstration Mission. Moving to
-            NSTP-Sat will allow the system to be redesigned and built in its
-            nominal form as an instrument payload.
 \end{itemize}
 }
 \end{fullwidth}
@@ -138,59 +142,11 @@ with a point-engineering design.
 
 % ---------------------------------------
 % ---------------------------------------
-%\section{Why now?}\label{sec:whynow}
-
-%\begin{fullwidth}
-
-%  \begin{itemize}
-%  \color{red}
-%    \item Science objectives of the new science investigation and their relation to 
-%    NASA science objectives and to recommendations of National Research Council (NRC)
-%    studies including Decadal Surveys.
-%    \item Description of how the payload will address NASA's science or technology objectives.
-%    \item Description of any potential partnerships including U.S. commercial, academic 
-%    and/or international.
-%  \end{itemize}
-\begin{fullwidth}
-{
-\fontsize{9pt}{9pt}\selectfont
-\vskip 1.5em
-\noindent
-\textsc{Why \sitsshort~ and why now?}
-\noindent
-\begin{itemize}
-  \item[] Over the next decade, NASA spacecraft will journey to novel destinations and 
-continue to push the boundaries of technological and scientific progress. During
-these missions there will be epoch-making moments that deserve to be
-documented for the benefit of all mankind. For too long these historic firsts
-have been captured ad-hoc or not at all - the first landing on an asteroid (NEAR),
-the first Mercury orbiter (Messenger), the first Pluto-Charon encounter 
-(New Horizons). 
- 
-  \item[] Meanwhile on Earth, an eager public relies on artist drawings and computer renderings
-to help them imagine our spacecraft as they travel to the furthest reaches of the solar
-system. The demand for richer and more immersive experiences is evident in the 
-exponential growth of social media, information sharing, and augmented reality. 
-\sitsshort~ is a system that harnesses state-of-the-art storytelling technology to 
-help people connect more deeply to NASAs mission of exploration and discovery.
-
-\item[] Moreover, as operations in space become more and more complex, having an
-asset such as \sitsshort~ onboard to monitor key spacecraft events (deployments, 
-rendezvous, burns) brings a powerful engineering capability to missions. The 
-flexibility \sitsshort~ brings with its autonomous, free-flying \textit{imagers} gives
-an extra dimension of possibility to storytellers, engineers and scientists 
-alike. 
-\end{itemize}
-}
-\end{fullwidth}
-
-% ---------------------------------------
-% ---------------------------------------
 \section{Concept of Operations}\label{sec:conops}
 
 %\begin{itemize}
 %\color{red}
-%    \item Description of the mission operations that would be required to enable the new science investigation.
+%    \item 
 %\end{itemize}
 
 The \sitsshort~ system is designed to collect footage of its host spacecraft
@@ -228,95 +184,9 @@ Phase 1: Deployment
   flight of the media collection trajectory.   
 \end{itemize}
 \noindent 
-Phase 2: Collection
-\begin{itemize}
-  \item[] Once clear of the immediate vicinity of the host spacecraft, the \textit{imager}
-  begins flight of the media collection trajectory.  This trajectory was designed by
-  analysts on the ground to position and point the \textit{imager} to collect the desired 
-  footage. The \textit{imager} dead-recons flight of the reference trajectory subject to
-  an \textit{r-plus control law}.\footnote[][1.25 in]{\textit{R-plus} is designed to protect the host
-  spacecraft at all costs, and stipulates that any maneuver performed by an \textit{imager}
-  must have the effect of increasing the distance between the \textit{imager} and spacecraft.}
-  An autonomous navigation system onboard the imager allows it to dynamically update 
-  its pointing in the contingency that it departs the reference trajectory, ensuring that 
-  the desired footage is collected. The \textit{imager} live streams footage directly to the
-  \textit{instrument} where it is stored for downlink.  
-\end{itemize}
-\noindent 
-Phase 3: Decommissioning
-\begin{itemize}
-  \item[] After completing flight of the collection trajectory, the \textit{imager} is prepped 
-  for decommissioning. Instead of attempting a potentially hazardous docking back to the 
-  \textit{instrument}, the \textit{imager} simply drifts off into space and the r-plus control law assures it
-  permanently leaves the vicinity of the host spacecraft. The collected footage is processed
-  by the \textit{instrument}, and chunked for eventual downlink to Earth. Due to the high volume of 
-  data involved in current media formats, this downlink could be spread over months.
-\end{itemize}
 \vskip 1.5em
 }
 \end{fullwidth}
-
-Because the \textit{imagers} are single-use and then disposed, the number of 
-\textit{imagers} housed in the \textit{instrument} correlates directly to how many independent
-sequences can be shot over the lifetime of a mission. Therefore, the \textit{imagers} have
-been optimized for short operational lives to minimize their size and
-allow the \textit{instrument} to carry a greater number. 
-
-% ---------------------------------------
-% ---------------------------------------
-
-\section{Technology}\label{sec:tech}
-
-%\begin{itemize}
-%\color{red}
-%    \item Payload mass, physical dimensions (LxWxH), and maximum envelope.
-%    \item System requirements such as power, data, command, unique environments, and mounting.
-%\end{itemize}
-
-The ultimate goal of this program is to design and build a spacecraft 
-instrument that can be carried into deep space as payload on NASA's robotic 
-exploration missions. However, an intermediate goal is currently being 
-pursued to develop a technology demonstration version of the instrument for 
-operation in Earth orbit. The design described below is the Earth-orbiting 
-version, and was originally developed for proposal as a NASA Technology 
-Demonstration Mission. As such, the standalone instrument has been merged into
-into a 12U CubeSat that can fly independent of a host spacecraft. 
-
-\begin{marginfigure}[0 in]%
-  \includegraphics[width=0.85\textwidth,right]{sits_cad_instrument.png}\\
-  \includegraphics[width=\textwidth]{sits_cad_imager.png}
-  \caption{CAD Renderings of a 12U \sitsshort~ \textit{instrument} (top) 
-           and \textit{imager} (bottom).}
-  \label{fig:sitscad}
-\end{marginfigure}
-
-{
-\fontsize{9pt}{9pt}\selectfont
-\vskip 1.5em
-\noindent
-\textsc{Design Overview}
-\noindent
-\begin{itemize}
-    \item[] \textit{Instrument} fits a 6U CubeSat form factor and contains five \textit{imagers}. Current design
-            utilizes a 12U CubeSat for free-flying testbed, with the remaining 6U used for
-            spacecraft bus systems.  
-    \item[] Compatible with operations in LEO, GEO, and deep space. \textit{Imagers} maneuver in a 
-            3m - 30m range from the host spacecraft, and have a nominal life span of 15 minutes.
-    \item[] Use of modern cell phone components (processors, transmitters, batteries, etc.)
-            allows for miniaturization of the free flying \textit{imagers}. Current size is 1/2U and further
-            reduction is possible through reconfiguration of COTS hardware. Because the \textit{imagers}
-            have a short operational life and are disposable, failure of these non-space hardened 
-            components is an acceptable risk. 
-\end{itemize}
-}
-
-The current \sitsshort~ design is the result of a JPL TeamXc rapid-design session. 
-It identifies all key software and hardware components and verifies that the mission
-concept is sound, but stops short of the detail needed to begin manufacture.
-However, the extensive use of COTS and high-TRL technology mean that maturing the
-design and progressing to hardware development can be done swiftly and safely. 
-Table \ref{tab:dmat} lists the key system components and their maturity
-levels.
 
 \begin{table*}
     \fontfamily{ppl}\selectfont
