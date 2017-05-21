@@ -1,0 +1,507 @@
+\documentclass{tufte-handout}
+
+\title{Leafleting Effectiveness Survey (LES)}
+\author[Jack Norris \& Eric Roberts \& Jonathon Smith]{Jack Norris\thanks{Executive Director, Vegan Outreach} \& Eric Roberts\thanks{Research Manager, California Department of Health Services} \& Jonathon Smith\thanks{Technical Group Supervisor, Jet Propulsion Laboratory}}
+
+%\date{28 March 2010} % without \date command, current date is supplied
+%\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{graphics/}} % set of paths to search for images
+\usepackage{amsmath}  % extended mathematics
+\usepackage{booktabs} % book-quality tables
+\usepackage{units}    % non-stacked fractions and better unit spacing
+\usepackage{multicol} % multiple column layout facilities
+\usepackage{colortbl}   % filler text
+\usepackage{fancyvrb} % extended verbatim environments
+\usepackage[export]{adjustbox}
+
+  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+
+% Standardize command font styles and environments
+\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
+\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command argument
+\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command argument
+\newcommand{\docenv}[1]{\textsf{#1}}% environment name
+\newcommand{\docpkg}[1]{\texttt{#1}}% package name
+\newcommand{\doccls}[1]{\texttt{#1}}% document class name
+\newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
+\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
+
+\newcommand{\sitslong}[0]{\textsc{Spacecraft In The Shot}}% document class option name
+\newcommand{\sitsshort}[0]{\textsc{Sits}}% document class option name
+
+
+\begin{document}
+
+\maketitle% this prints the handout title, author, and date
+
+%\begin{itemize}
+%\color{red}
+%    \item Name of submitter and contact information (institutional affiliation, email address, phone number).
+%    \item SMD research discipline with which the suggested new science investigation is best aligned (Astrophysics, Earth Science, Heliophysics, or Planetary	Science)
+%    \item Desired orbit locations including any launch window constraints;
+%\end{itemize}
+
+% ---------------------------------------
+% ---------------------------------------
+\begin{abstract}
+\noindent
+\sitslong~ (\sitsshort) is a technology initiative that will empower NASA to 
+document the most important milestones in robotic deep space exploration 
+in a visceral and compelling way. It will equip spacecraft with the 
+\textbf{\sitsshort~Imaging Instrument}, which deploys small imagers 
+in the vicinity of the host spacecraft. These imagers, which are a 
+fraction the size of a 1U CubeSat, autonomously collect footage of the 
+spacecraft during important mission events. For instance, 
+the imagers can be deployed to record HD video of the Europa 
+spacecraft during a close approach to Europa 
+(Fig. \ref{fig:sitsdepiction}). 
+
+A design has been developed that integrates the \sitsshort~ concept 
+into a 12U CubeSat for potential flight as a NASA Technology Demonstration 
+Mission. This existing design can serve as the starting point for an 
+NSTP-Sat adaptation, where the CubeSat bus can be eliminated and the 
+rest of the hardware consolidated into a standalone payload instrument. 
+\end{abstract}
+
+\begin{marginfigure}[-2 in]%
+  \includegraphics[width=\textwidth]{sitspic3.png}
+  \caption{Illustration of \sitsshort~ footage of Europa spacecraft
+  during Europa close approach.}
+  \label{fig:sitsdepiction}
+\end{marginfigure}
+
+%\begin{marginfigure}[0 in]%
+%  \includegraphics[width=\textwidth]{sitsdepiction.png}\\
+%  \includegraphics[width=.98\textwidth]{sitsdepiction2.png}
+%  \caption{Illustration of a \sitsshort~ Imager capturing footage of 
+%           Jupiter Orbit Insertion burn. After collection, the imager 
+%           is left behind.}
+%  \label{fig:sitsdepiction}
+%\end{marginfigure}
+  
+% ---------------------------------------
+% ---------------------------------------
+%\section{Introduction}\label{sec:intro}
+
+\newthought{NASA's 2014 Strategic Plan explains} that its vision is to 
+``reach for new heights and reveal the unknown for the benefit of humankind."
+\sitsshort~ will give humankind a revolutionary experience by rolling back 
+the curtain on our deep space operations and visually documenting our 
+spacecraft as they explore the solar system. It does this through the 
+\textbf{\sitsshort~ Imaging Instrument}, a spacecraft payload instrument 
+that contains modern filmmaking equipment and that allows operators on 
+the ground to design and capture high-definition video sequences of 
+spacecraft operating in deep space.  
+
+\begin{fullwidth}
+{
+\fontsize{9pt}{9pt}\selectfont
+\vskip 1.5em
+\noindent
+\textsc{\sitsshort~ At A Glance}
+\noindent
+\begin{itemize}
+    \item[] Technology development effort to enable the collection of 
+            cinematic footage of robotic spacecraft operating at-location
+            in deep space. Ultimate goal is to develop a self-contained 
+            instrument capable of adoption into typical deep space mission payloads.
+    \item[]
+    \item[] The \sitsshort~ Imaging Instrument} (referred to as the \textit{instrument}) 
+            is a self-contained unit that can be mounted 
+            as spacecraft payload. It protects and deploys 
+            \sitsshort~ Imagers} (referred to as \textit{imagers}),
+            which autonomously collect cinematic footage of the host spacecraft.
+            The \textit{imagers} live-stream footage (4K video and stills) to the \textit{instrument}, 
+            where it is stored until spacecraft downlink is available. \textit{Imagers} are 
+            discarded after use, they do not re-dock.
+    \item[]        
+    \item[] Seed funding has been provided by JPL's Office of Formulation 
+            (formerly the JPL Innovation Foundry). \sitsshort~ has graduated from JPL's A-Team 
+            and TeamXc rapid design programs. The current point-design has the 
+            \textit{instrument} merged into a 12U CubeSat that can fly as
+            an independent NASA Technology Demonstration Mission. Moving to
+            NSTP-Sat will allow the system to be redesigned and built in its
+            nominal form as an instrument payload.
+\end{itemize}
+}
+\end{fullwidth}
+
+\clearpage
+\sitslong~ has been sponsored the last 18 months by JPL's Office of 
+Formulation (formerly the JPL Innovation Foundry). With their support, 
+\sitsshort~ has received a NASA New Technology Report and provisional patent, passed through both 
+A-Team and TeamXc study sessions, and emerged as a well developed concept 
+with a point-engineering design.
+
+% ---------------------------------------
+% ---------------------------------------
+%\section{Why now?}\label{sec:whynow}
+
+%\begin{fullwidth}
+
+%  \begin{itemize}
+%  \color{red}
+%    \item Science objectives of the new science investigation and their relation to 
+%    NASA science objectives and to recommendations of National Research Council (NRC)
+%    studies including Decadal Surveys.
+%    \item Description of how the payload will address NASA's science or technology objectives.
+%    \item Description of any potential partnerships including U.S. commercial, academic 
+%    and/or international.
+%  \end{itemize}
+\begin{fullwidth}
+{
+\fontsize{9pt}{9pt}\selectfont
+\vskip 1.5em
+\noindent
+\textsc{Why \sitsshort~ and why now?}
+\noindent
+\begin{itemize}
+  \item[] Over the next decade, NASA spacecraft will journey to novel destinations and 
+continue to push the boundaries of technological and scientific progress. During
+these missions there will be epoch-making moments that deserve to be
+documented for the benefit of all mankind. For too long these historic firsts
+have been captured ad-hoc or not at all - the first landing on an asteroid (NEAR),
+the first Mercury orbiter (Messenger), the first Pluto-Charon encounter 
+(New Horizons). 
+ 
+  \item[] Meanwhile on Earth, an eager public relies on artist drawings and computer renderings
+to help them imagine our spacecraft as they travel to the furthest reaches of the solar
+system. The demand for richer and more immersive experiences is evident in the 
+exponential growth of social media, information sharing, and augmented reality. 
+\sitsshort~ is a system that harnesses state-of-the-art storytelling technology to 
+help people connect more deeply to NASAs mission of exploration and discovery.
+
+\item[] Moreover, as operations in space become more and more complex, having an
+asset such as \sitsshort~ onboard to monitor key spacecraft events (deployments, 
+rendezvous, burns) brings a powerful engineering capability to missions. The 
+flexibility \sitsshort~ brings with its autonomous, free-flying \textit{imagers} gives
+an extra dimension of possibility to storytellers, engineers and scientists 
+alike. 
+\end{itemize}
+}
+\end{fullwidth}
+
+% ---------------------------------------
+% ---------------------------------------
+\section{Concept of Operations}\label{sec:conops}
+
+%\begin{itemize}
+%\color{red}
+%    \item Description of the mission operations that would be required to enable the new science investigation.
+%\end{itemize}
+
+The \sitsshort~ system is designed to collect footage of its host spacecraft
+operating at location. It does this by tasking an individual
+\textit{imager} to fly a \texbf{media collection sortie}. These sorties are designed
+in advance by analysts on the ground and uplinked to the \textit{instrument}. They identify
+the time at which the \textit{imager} should be deployed and specify the trajectory and 
+attitude profile that it needs to fly to collect the desired footage. There are 
+three distinct phases involved in executing a sortie.
+
+\begin{marginfigure}[-1.5 in]%
+  \includegraphics[width=\textwidth]{sitscoop.png}
+  \caption{\sitsshort~ \textit{imager} after deployment from the \textit{instrument} as it collects footage of the
+  host spacecraft.}
+  \label{fig:sitscoop}
+\end{marginfigure}
+
+\begin{fullwidth}
+{  
+\fontsize{9pt}{9pt}\selectfont
+\vskip 1.5em
+\noindent
+\textsc{Media Collection Sortie}
+\vskip 1em
+\noindent
+Phase 1: Deployment 
+\begin{itemize}
+  \item[] A sortie is initiated by the ejection of an \textit{imager} from its storage
+  location inside the \textit{instrument}. The \textit{imager} will have been charged and tasked 
+  with a trajectory prior to deployment. The ejection mechanism ensures that 
+  \textit{imager} clears the immediate physical location of the host spacecraft, at which 
+  point it brings the host spacecraft within
+  its field of view and initiates a footage stream to 
+  the \textit{instrument}. Once the feed has been registered, the \textit{imager} initiates its
+  flight of the media collection trajectory.   
+\end{itemize}
+\noindent 
+Phase 2: Collection
+\begin{itemize}
+  \item[] Once clear of the immediate vicinity of the host spacecraft, the \textit{imager}
+  begins flight of the media collection trajectory.  This trajectory was designed by
+  analysts on the ground to position and point the \textit{imager} to collect the desired 
+  footage. The \textit{imager} dead-recons flight of the reference trajectory subject to
+  an \textit{r-plus control law}.\footnote[][1.25 in]{\textit{R-plus} is designed to protect the host
+  spacecraft at all costs, and stipulates that any maneuver performed by an \textit{imager}
+  must have the effect of increasing the distance between the \textit{imager} and spacecraft.}
+  An autonomous navigation system onboard the imager allows it to dynamically update 
+  its pointing in the contingency that it departs the reference trajectory, ensuring that 
+  the desired footage is collected. The \textit{imager} live streams footage directly to the
+  \textit{instrument} where it is stored for downlink.  
+\end{itemize}
+\noindent 
+Phase 3: Decommissioning
+\begin{itemize}
+  \item[] After completing flight of the collection trajectory, the \textit{imager} is prepped 
+  for decommissioning. Instead of attempting a potentially hazardous docking back to the 
+  \textit{instrument}, the \textit{imager} simply drifts off into space and the r-plus control law assures it
+  permanently leaves the vicinity of the host spacecraft. The collected footage is processed
+  by the \textit{instrument}, and chunked for eventual downlink to Earth. Due to the high volume of 
+  data involved in current media formats, this downlink could be spread over months.
+\end{itemize}
+\vskip 1.5em
+}
+\end{fullwidth}
+
+Because the \textit{imagers} are single-use and then disposed, the number of 
+\textit{imagers} housed in the \textit{instrument} correlates directly to how many independent
+sequences can be shot over the lifetime of a mission. Therefore, the \textit{imagers} have
+been optimized for short operational lives to minimize their size and
+allow the \textit{instrument} to carry a greater number. 
+
+% ---------------------------------------
+% ---------------------------------------
+
+\section{Technology}\label{sec:tech}
+
+%\begin{itemize}
+%\color{red}
+%    \item Payload mass, physical dimensions (LxWxH), and maximum envelope.
+%    \item System requirements such as power, data, command, unique environments, and mounting.
+%\end{itemize}
+
+The ultimate goal of this program is to design and build a spacecraft 
+instrument that can be carried into deep space as payload on NASA's robotic 
+exploration missions. However, an intermediate goal is currently being 
+pursued to develop a technology demonstration version of the instrument for 
+operation in Earth orbit. The design described below is the Earth-orbiting 
+version, and was originally developed for proposal as a NASA Technology 
+Demonstration Mission. As such, the standalone instrument has been merged into
+into a 12U CubeSat that can fly independent of a host spacecraft. 
+
+\begin{marginfigure}[0 in]%
+  \includegraphics[width=0.85\textwidth,right]{sits_cad_instrument.png}\\
+  \includegraphics[width=\textwidth]{sits_cad_imager.png}
+  \caption{CAD Renderings of a 12U \sitsshort~ \textit{instrument} (top) 
+           and \textit{imager} (bottom).}
+  \label{fig:sitscad}
+\end{marginfigure}
+
+{
+\fontsize{9pt}{9pt}\selectfont
+\vskip 1.5em
+\noindent
+\textsc{Design Overview}
+\noindent
+\begin{itemize}
+    \item[] \textit{Instrument} fits a 6U CubeSat form factor and contains five \textit{imagers}. Current design
+            utilizes a 12U CubeSat for free-flying testbed, with the remaining 6U used for
+            spacecraft bus systems.  
+    \item[] Compatible with operations in LEO, GEO, and deep space. \textit{Imagers} maneuver in a 
+            3m - 30m range from the host spacecraft, and have a nominal life span of 15 minutes.
+    \item[] Use of modern cell phone components (processors, transmitters, batteries, etc.)
+            allows for miniaturization of the free flying \textit{imagers}. Current size is 1/2U and further
+            reduction is possible through reconfiguration of COTS hardware. Because the \textit{imagers}
+            have a short operational life and are disposable, failure of these non-space hardened 
+            components is an acceptable risk. 
+\end{itemize}
+}
+
+The current \sitsshort~ design is the result of a JPL TeamXc rapid-design session. 
+It identifies all key software and hardware components and verifies that the mission
+concept is sound, but stops short of the detail needed to begin manufacture.
+However, the extensive use of COTS and high-TRL technology mean that maturing the
+design and progressing to hardware development can be done swiftly and safely. 
+Table \ref{tab:dmat} lists the key system components and their maturity
+levels.
+
+\begin{table*}
+    \fontfamily{ppl}\selectfont
+  \begin{tabular}{lll}
+    \toprule
+    Design Component & Maturity & Description \\
+    \midrule
+    Integrated Design & TRL 3 & TeamXc point design for \sitsshort~ system\\
+    \midrule
+    Hardware: & & \\
+    Camera Stack & COTS & Cameras (Omnivision) and processors (Snapdragon) \\
+    Local Communication & COTS & \textit{Instrument}-\textit{imager} communication via Qualcom Wifi Chips\\
+    GNC & COTS & Sinclair reaction wheels, Epson IMU, DSSP thrusters \\
+    Power & COTS & Panasonic Lithium-Ion Rechargeable Batteries \\
+    \midrule
+    Software: & & \\
+    Monte & TRL 9 & JPL ground software for trajectory design and navigation \\   
+    AutoNav & TRL 9 & JPL flight software for autonomous spacecraft navigation \\
+    \bottomrule
+  \end{tabular}
+  \vskip 1.5em
+  \caption{\sitsshort~ Technology Maturity Levels}
+  \label{tab:dmat}
+\end{table*}
+
+% ---------------------------------------
+\subsection{Collecting and Transmitting Footage}
+
+Because the \textit{imagers} are discarded after a single use, emphasis has been placed on 
+reducing both their physical size and cost so that more can be carried from 
+mission start. Hardware is liberally sourced from the commercial cell 
+phone market (Table \ref{tab:camstack}) which invests billions of dollars 
+every year in just these initiatives (miniaturization and cost reduction). 
+
+Each \textit{imager} is equipped with two cameras that independently stream
+footage to the \textit{instrument}. Each camera has a dedicated Wifi chipset and
+antenna to ensure a data-rate high enough to stream 4K video. On the receiving
+end, the \textit{instrument} has four independent wifi receivers (chipset and antenna) which 
+allows for the simultaneous operation of up to two \textit{imagers} (two dedicated 
+channels for each \textit{imager}). The \textit{imagers} do not store any video; everything is 
+streamed directly to the \textit{instrument} where it is logged in onboard storage and 
+processed for downlink. As downlink becomes available, the \textit{instrument} queues 
+up and sends data down through the main host spacecraft antenna.
+
+\begin{table}
+  \fontfamily{ppl}\selectfont
+  \begin{tabular}{ll}
+    \toprule
+    Component & Description \\
+    \midrule
+    Camera &  Omnivision 13850 13.2 MP cell phone camera\\
+    Processor & Snapdragon 820 Android processor \\
+    Wifi Chipset & Qualcom AR9390 Chip 450Mbps \\ 
+    Wifi Antenna & Johanson Technology 2450AT18B100 antenna\\
+   \bottomrule
+  \end{tabular}
+  \caption{\sitsshort~ Camera Stack.}
+  \label{tab:camstack}
+\end{table}
+
+\clearpage
+{
+\fontsize{9pt}{9pt}\selectfont
+\vskip 1.5em
+\noindent
+\textsc{Camera Stack Design Summary}
+\noindent
+\begin{itemize}
+    \item[] An S-Band (2.4 GHz) Wifi protocol is used for communication between the \textit{imagers} and \textit{instrument}.
+    \item[] Each \textit{imager} has two independent cameras and streaming pipelines capable of
+    processing 4K video (30 fps) or slow-motion 720P video (240 fps). 
+    \begin{itemize}
+      \item[] \textit{Imager} streaming pipeline consists of Omnivision Cameras (x2), 
+      Snapdragon Processors (x2), Qualcomm Wifi Chips (x2), Johanson Antennas (x2)
+    \end{itemize}
+    \item[] The \textit{instrument} has four independent receivers capable of supporting 
+    two simultaneously operating \textit{imagers}.
+    \begin{itemize}
+      \item[] \textit{Instrument} receiving pipeline consists of Qualcomm Wifi Chips (x4) and 
+       Johanson Antennas (x4).
+    \end{itemize}
+    \item[] Footage is saved on board the \textit{instrument} and preprocessed for 
+    eventual downlink to Earth via the host spacecraft communication system.
+\end{itemize}
+\vskip 1.5em
+}
+
+
+% ---------------------------------------
+\subsection{Autonomous operation}
+
+JPL has an astrodynamic software toolkit called Monte\footnote{montepy.jpl.nasa.gov} 
+that is used for high-accuracy trajectory design and navigation. The spacecraft 
+trajectories produced by Monte are routinely used by science instrument operators to design 
+their observation profiles. Monte can be configured to do an analogous task for
+\sitsshort, which is to help operators design \textit{imager} sortie trajectories that 
+capture dynamic cinematic shots of the spacecraft and its surrounding environment.
+These trajectories will be created well in advance of the actual sortie, and 
+uplinked for the \textit{imagers} to fly autonomously. 
+
+After an \textit{imager} has been ejected, it begins flying the sortie only after it
+has cleared a minimum-operational distance from the host spacecraft.\footnote{The current
+design has this set at 3m, but it can be adjusted if the host spacecraft
+has extended features (solar panels, magnetic booms) that need to be 
+avoided.} At this point, the \textit{imager} uses its onboard IMU to dead-recon flight
+of the reference trajectory. JPL's AutoNav flight software is used to adjust
+the pointing of the \textit{imager} cameras in real time, to ensure the integrity of
+the shot even if the \textit{imager} departs from its nominal flight plan.\footnote{AutoNav has 
+flight heritage on several NASA missions, including Deep Impact and Stardust missions, where it was used with great 
+success.} 
+
+After the sortie is complete, the \textit{instrument} will autonomously process the collected
+footage and segment it for downlink. Initially, only a low-resolution version of the
+footage will be returned, allowing operators to prioritize in what order the 
+full-resolution segments will be returned.
+
+\clearpage
+% ---------------------------------------
+% ---------------------------------------
+\section{Path to Flight}
+
+%\begin{itemize}
+%\color{red}
+%    \item Any preliminary studies that should be undertaken in advance of a 
+%    decision to proceed in order to determine the feasibility, sensitivity, 
+%    cost, or other characteristics of the new science investigation.	
+%    \item List of payload services required from integration to operations, including 
+%    but not limited to cleanliness level, unique test and checkout, temperature, access, 
+%    power and environment.
+%    \item Identification of any hazardous, explosive, chemical, or biological aspects of the
+%    payload.
+%\end{itemize}
+
+In order for \sitsshort~ to be ready for flight on-board NSTP-Sat in 2021, an official,
+funded \sitslong~ project needs to be established in FY18. The first order of business 
+is to alter the system design to fit the NSTP-Sat paradigm. The current design is 
+a merged version of the \sitsshort~ concept into a 12U CubeSat (6U for \sitsshort~ 
+and 6U for the CubeSat bus) appropriate for flight as a standalone NASA Technology 
+Demonstration Mission. Adapted to NSTP-Sat, \sitsshort~ would drop off the 6U bus and 
+assume its proper form as a true payload instrument. During this redesign, the 
+\textit{instrument} can be custom-fitted to NSTP-Sat's size, weight, and power 
+requirements.\footnote{The overall size and weight of the resulting \textit{instrument} can
+be adjusted by adding or removing \textit{imagers} from its manifest.} 
+
+\begin{fullwidth}
+{
+\fontsize{9pt}{9pt}\selectfont
+\vskip 1.5em
+\noindent
+\textsc{Timeline for Developing Flight Instrument}
+\noindent
+\begin{itemize}
+    \item[\textbf{ATP}] For project start beginning FY18.
+    \item[\textbf{ATP + 3 months}] Complete engineering redesign.
+    \item[\textbf{ATP + 4 months}] SRR.
+    \item[\textbf{ATP + 9 months}] Finish full redesign, begin hardware prototype.
+    \item[\textbf{ATP + 11 months}] PDR.
+    \item[\textbf{ATP + 16 months}] Refine design based on prototype testing. Begin work on flight
+     hardware. 
+    \item[\textbf{ATP + 19 months}] CDR.
+     
+    \item[\textbf{ATP + 26 months}] Complete flight hardware, begin internal testing. 
+    \item[\textbf{ATP + 29 months}] Deliver to NSTP-Sat Payload Integration Center.
+    \item[\textbf{ATP + 31 months}] Start Payload Integration.
+\end{itemize}
+}
+\end{fullwidth}
+
+Once \sitsshort~~ has been redesigned, an accelerated hardware development program
+needs to be initiated. Because so much of the system is built on high-TRL or COTS 
+technology, rapid fabrication of the \textit{instrument} and \textit{imagers} is feasible in 
+a very short timeframe. During the prototyping phase, manufacturers will be 
+engaged to help reconfigure their products to further miniaturize the \textit{imager} 
+design, which will in turn reduce the size of the overall instrument package.
+Additionally, the non-space hardened components will be vacuum and radiation tested 
+and any which show signs of failing before the planned \textit{imager} lifetime of 15 minutes
+can be replaced. Lessons learned from the prototype will be wrapped into the final design
+and fabrication of a flight-ready instrument.
+
+% ---------------------------------------
+% ---------------------------------------
+%\section{Closing Thoughts}\label{sec:close}
+
+
+
+
+
+\end{document}  
