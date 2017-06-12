@@ -1,7 +1,7 @@
 \documentclass{tufte-handout}
 
 \title{Leafleting Effectiveness Survey (LES)}
-\author[Jack Norris \& Eric Roberts \& Jonathon Smith]{Jack Norris\thanks{Executive Director, Vegan Outreach} \& Eric Roberts\thanks{Research Manager, California Department of Health Services} \& Jonathon Smith\thanks{Technical Group Supervisor, Jet Propulsion Laboratory}}
+\author[Jack Norris \& Eric Roberts \& Jonathon Smith]{Jack Norris\thanks{Executive Director, Vegan Outreach (jack@veganoutreach.org), \textit{LES Roles:} Study Lead, Logistics, Reporting } \& Eric Roberts\thanks{Research Manager, California Department of Health Services (eroberts@something.com), \textit{LES Roles:} Statistical Analyst} \& Jonathon Smith\thanks{Technical Group Supervisor, Jet Propulsion Laboratory (jonathon.j.smith@gmail.com), \textit{LES Roles:} Consultant}}
 
 \date{June 2017} % without \date command, current date is supplied
 %\geometry{showframe} % display margins for debugging page layout
@@ -16,6 +16,7 @@
 \usepackage{colortbl}   % filler text
 \usepackage{fancyvrb} % extended verbatim environments
 \usepackage[export]{adjustbox}
+\usepackage{pdfpages}
 
   \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
 
@@ -29,24 +30,23 @@
 \newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
 \newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
 
-%\newcommand{\sitslong}[0]{\textsc{Spacecraft In The Shot}}% document class option name
 \newcommand{\les}[0]{\textsc{LES}}% document class option name
-\newcommand{\totalbooklets}[0]{\textsc{130000}}% document class option name                  
-\newcommand{\stickercost}[0]{\textsc{22500}}% document class option name                  
-\newcommand{\giftcardnum}[0]{\textsc{9000}}                                   
-\newcommand{\giftcardcost}[0]{\textsc{67500}}
-\newcommand{\schoolnum}[0]{\textsc{90}}
+
+
+\newcommand{\totalbooklets}[0]{\textsc{150000}}
+\newcommand{\giftcardnum}[0]{\textsc{7500.0}}                                   
+\newcommand{\schoolnum}[0]{\textsc{75.0}}
+\newcommand{\giftcardcost}[0]{\textsc{112500.0}}
+\newcommand{\stickercost}[0]{\textsc{22500.0}}                  
+\newcommand{\websitecost}[0]{\textsc{12000.0}}
+\newcommand{\totalrequest}[0]{\textsc{135000.0}} 
+\newcommand{\totalvo}[0]{\textsc{39000.0}}             
+
 
 \begin{document}
 
 \maketitle% this prints the handout title, author, and date
 
-%\begin{itemize}
-%\color{red}
-%    \item Name of submitter and contact information (institutional affiliation, email address, phone number).
-%    \item SMD research discipline with which the suggested new science investigation is best aligned (Astrophysics, Earth Science, Heliophysics, or Planetary	Science)
-%    \item Desired orbit locations including any launch window constraints;
-%\end{itemize}
 
 % ---------------------------------------
 % ---------------------------------------
@@ -71,7 +71,7 @@ particularly to zero (the \textbf{``One Week Vegan"}).
 
 \end{abstract}
 
-\begin{marginfigure}[-2 in]%
+\begin{marginfigure}[0 in]%
   \raggedleft
   \includegraphics[width=\textwidth]{vologo.png}
   \caption{Vegan Outreach was founded in 1993 and has since handed out more
@@ -79,15 +79,6 @@ particularly to zero (the \textbf{``One Week Vegan"}).
   the proposed LES Study.}
   \label{fig:vologo}
 \end{marginfigure}
-
-%\begin{marginfigure}[0 in]%
-%  \includegraphics[width=\textwidth]{sitsdepiction.png}\\
-%  \includegraphics[width=.98\textwidth]{sitsdepiction2.png}
-%  \caption{Illustration of a \sitsshort~ Imager capturing footage of 
-%           Jupiter Orbit Insertion burn. After collection, the imager 
-%           is left behind.}
-%  \label{fig:sitsdepiction}
-%\end{marginfigure}
   
 \newthought{The Leafleting Effectiveness Survery (\les)} will attempt
 to quantify the impact of pro-animal leafleting on the later 
@@ -110,7 +101,11 @@ looking to ACE to finance (1) the printing of \totalbooklets~
 survey-advertising stickers (\$\stickercost) (2) the purchase of
 \giftcardnum~ gift cards to distribute as incentives for taking the 
 survery (\$\giftcardcost), and (3) the creation of a public website
-to share the results (\$\websitecost).
+to share the results (\$\websitecost). This brings the total amount
+of money requested for the study to \textbf{\$\totalrequest}.
+
+An overview of the study design is provided below, and elaborated 
+on in more length throughout the rest of the document.
 
 \begin{fullwidth}
 {
@@ -143,20 +138,56 @@ to share the results (\$\websitecost).
 % ---------------------------------------
 \section{Background}\label{sec:background}
 
+\newthought{There have been} a number of previous attempts to measure the effectiveness
+of leafleting (summarized below). These studies have helped characterize
+this largely unexplored landscape, however none of them were designed or
+powered appropriately to answer the question of whether leafleting 
+college campuses produces vegans at a reliable rate. 
+ 
+\begin{fullwidth}
+{
+\fontsize{9pt}{9pt}\selectfont
+\vskip 1.5em
+\noindent
+\textsc{Previous Leafleting Studies}
+\noindent
 \begin{itemize}
-\color{red}
-    \item Talk here about previous leafleting studies
-    \item Talk here about pilot studies.
+    \item[] In the fall of 2012, Farm Sanctuary and The Humane League partnered 
+    in evaluating the impact of leafleting at the University of Delaware and 
+    the University of Maryland by surveying 403 students who had received a 
+    Vegan Outreach leaflet during their college career With corrected arithmetic, 
+    \textbf{1.7 percent} of the recipients said they went vegetarian as a result 
+    of the leaflet. Limitations included the absence of a control group comparison, 
+    regression analysis, and analysis of statistical significance.
+    \item[] In the fall of 2013, Animal Charity Evaluators coordinated a similar 
+    study, again using Vegan Outreach leaflets with students from ten American 
+    colleges and one Canadian college.The sample sizes were 123 and 477 for the 
+    treatment group and the control group respectively. Using a generalized linear 
+    model and a chi-square test, the differences in change in consumption of red 
+    meat and poultry (but not fish) between the experimental group and the control 
+    group were statistically significant at the 99 percent confidence level. 
+    Limitations include the absence of a large sample size for each school, 
+    and a heavy dependence on the subjects? recollection of their diet three 
+    months prior to the survey.
 \end{itemize}
+}
+\end{fullwidth}
 
-\newthought{Vegan Outreach} has run a total of three pilot studies
+Beyond this literature, Vegan Outreach has run a total of three pilot studies
 in preparation for a full-scale LES. These pilots have focused primarily on 
 crafting a study approach that results in a sufficiently high survey response rate to
 make a fully powered LES tractable. The current study design (brightly colored stickers 
 and \$15 incentive for 5\% response rate) is a direct result of these studies, summarized 
 below.  
 
-\begin{fullwidth}
+\begin{marginfigure}[-1 in]%
+  \includegraphics[width=\textwidth]{les_sticker_1.png}\\
+  \includegraphics[width=.98\textwidth]{les_sticker_2.png}
+  \caption{Stickers used to adeverstise incentivised surves, pilot 1 and 2 (top), pilot 3 (bottom).}
+  \label{fig:lesstickers}
+\end{marginfigure}
+
+%\begin{fullwidth}
 {  
 \fontsize{9pt}{9pt}\selectfont
 \vskip 1.5em
@@ -166,40 +197,35 @@ below.
 \noindent
 Pilot 1: Fall 2015 
 \begin{itemize}
-  \item[] The first pilot study utilized a test group of 5000 and a control group of 1000. 
-  \item[] Plain white stickers advertised a \$5 incentivized survery.
-  \item[] Overall response rate (P1 \& P2) was 1.88\%. 
+  \item[] The first pilot study utilized a test group of 5000 and a control 
+  group of 1000. It used plain white stickers (Figure \ref{fig:lesstickers}) 
+  to advertised a \$5 incentivized survey, and achieved an overall response 
+  rate of 1.88\%. 
 \end{itemize}
 \noindent 
 Pilot 2: Spring 2016 
 \begin{itemize}
-  \item[] Two tests groups were used both with 100 participants.  
-  \item[] Plain white stickers advertised \$10 (group 1) and \$20 (group 2) incentivized surveys.
-  \item[] Response rates were 3\% and 2\% respectively. 
+  \item[] The second pilot used two separate tests groups, each with 100 
+  participants, and no control group. Plain white stickers advertised \$10 
+  (group 1) and \$20 (group 2) incentivized surveys and achieved response 
+  rates were 3\% and 2\% respectively. 
 \end{itemize}
 Pilot 3: Spring 2016 
 \begin{itemize}
-  \item[] Test group with 600 participants.  
-  \item[] Colored stickers advertised a \$5 incentivized survey. 
-  \item[] An additional \$10 was offered to complete Part 2 of the survey.
-  \item[] Response rate was 5\%. 
+  \item[] The third pilot used a single test group with 600 participants 
+  (no control). This time colored stickers (Figure \ref{fig:lesstickers}) 
+  advertised a \$5 incentivized survey, and an additional \$10 was offered 
+  to complete Part 2 of the survey for a response rate of 5\%. 
 \end{itemize}
 \vskip 1.5em
 }
-\end{fullwidth}
-
-\begin{marginfigure}[-5 in]%
-  \includegraphics[width=\textwidth]{les_sticker_1.png}\\
-  \includegraphics[width=.98\textwidth]{les_sticker_2.png}
-  \caption{Stickers used to adeverstise incentivised surves, pilot 1 and 2 (top), pilot 3 (bottom).}
-  \label{fig:lesstickers}
-\end{marginfigure}
+%\end{fullwidth}
 
 The full-scale LES will use the strategy from Pilot 3. The key elements are
 (1) colored stickers, (2) \$5 incentive for Part 1 survey, (3) \$10 for Part 2
-survey. d
+survey. 
 
-\begin{marginfigure}[-1 in]%
+\begin{marginfigure}[1 in]%
   \includegraphics[width=\textwidth]{les_booklet_mockup.png}
   \caption{Mockup of test booklet with survey sticker.}
   \label{fig:lesbooklet}
@@ -207,24 +233,127 @@ survey. d
 
 % ---------------------------------------
 % ---------------------------------------
-\section{Parameters}
+\section{Methods}
 
+The motivation of this study is to quantify the effect of an intervention 
+(leafleting). It uses a pre-test / post-test design where each participant 
+is evaluated before and after the intervention. Because each subjects 
+covariates are identical both before and after the intervention, comparison 
+of pre and post test outcomes becomes relatively straightforward. 
+Each participant effectively serves as their own control, except for the
+confounding influence of time, which will be addressed a bit later. 
+
+Both pre-test and post-test surveys will include diet frequency questions 
+asking subjects to quantify their consumption of various foods during the 
+previous week, with response options presented as Likert scales.\footnote{An example
+of the survey can be examined at isurveysite.com} To maximize both statistical 
+validity and measurement reliability, outcomes will be analyzed as the 
+percent of subjects consuming non-vegan foods less than once per week or 
+never (binary variable). Such subject are termed ``one-week vegans" (OWV), and 
+quantifying the number of one-week vegans created as the result of leafleting 
+is the prime goal of this study.\footnote{The study will also examine the
+number of people reporting no beef consumption (``one-week beef avoiders" (OWBA)) 
+and no meat consumption of any kind except fish (``one-week pescatarians"(OWP)).}
+
+The study will employ two treatment arms using two different leaflets. This is
+in part to make sure that a single, low-performing leaflet doesn't sway the 
+overall results of the study. These treatment groups will be pooled when 
+when analyzing the survey results for one-week vegans. The number of subjects
+required for the treatment arms depends on the quantities described in Table
+\ref{tab:drivers}.
+
+\begin{table*}
+  \fontfamily{ppl}\selectfont
+  \begin{tabular}{p{2cm}p{3cm}p{4cm}}
+    \toprule
+    Quantity  & What this is & Reason this is important \\
+    \midrule
+    Pre-test probability  & How common the outcome is at baseline (that is, prior to the intervention) & The more rare a phenomenon, the more subjects needed to quantify its frequency, or changes in its frequency due to the intervention\\                
+    \midrule
+    Expected odds ratio  & How much of an effect the intervention is anticipated to have on the outcome & Small effects require more subjects to observe compared to large effects\\                
+    \bottomrule
+  \end{tabular}
+  \vskip 1.5em
+  \caption{\les Statistical Drivers}
+  \label{tab:drivers}
+\end{table*}
+
+Table \ref{tab:power} shows the assumed pre-test probabilities and expected 
+odds ratios that were used to size the treatment group. These are largely
+based on the results of the \les Pilot Studies mentioned above, as well
+as ``Pay-Per Read" (PPR) studies undertaken by VO.\footnote{The PPR studies used
+Amazon's Mechanical Turk platform to enlist people to read leaflets and 
+fill out surveys afterward.}
+
+\begin{table*}
+  \fontfamily{ppl}\selectfont
+  \begin{tabular}{p{1.5cm}p{1.5cm}p{1.5cm}p{1.5cm}p{2 cm}}
+    \toprule
+    Group  & Pre-test Rate & Expected ratio & \# for 80\% power & \# leaflets to distribute \\
+    \midrule
+    OWV  & 2.5\% & 1.5 & 3190 & 63800 \\                
+    OWBA  & 37.5\% & 1.6 & 200 & 6000 \\                
+    OWP  & 2.9\% & 1.7 & 1540 & 30800 \\                
+    \bottomrule
+  \end{tabular}
+  \vskip 1.5em
+  \caption{\les~ Power Calculation Assumptions}
+  \label{tab:power}
+\end{table*}
+
+\subsection*{Control group}
+
+For this design, the potential confounder is time; that is, 
+if students are rapidly becoming vegan independently of the 
+leaflets, this effect could be misattributed to the intervention.
+This is the argument for a separate control group, which would 
+undergo the same pre-test and post-test measurements as the 
+treatment groups but would receive a spurious intervention 
+(that is, a leaflet unrelated to veganism) in between.  
+
+The inclusion of an equal sized control group will increase
+the cost of the study by roughly \$30000. If ACE is willing to 
+provide these additional funds, a full control group will be utilized
+for the study. If not, than a series of mitigating factors will
+be employed to minimize the impact of time on the study. 
+
+{  
+\fontsize{9pt}{9pt}\selectfont
+\vskip 1.5em
+\noindent
+\textsc{Time-variable mitigation measures}
+\vskip 1em
+\noindent
+Shorten pre-post test span 
 \begin{itemize}
-\color{red}
-    \item Put the relevant power calculations in here.  	
+  \item[] The nominal time span between administering the pre and post
+  test surveys is two months (this was used in the pilots). For an 
+  uncontrolled study, this will be shortened to one month to minimize
+  the opportunity for non-study parmaeters to influence the results. 
 \end{itemize}
-
+\noindent 
+Minimize other campus outreach activities
+\begin{itemize}
+  \item[] VO will engage with other players in the AR community and
+  ask that they impose a moratorium on campus outreach activities for
+  the duration of the study. 
+\end{itemize}
+\vskip 1.5em
+}
 
 
 % ---------------------------------------
 % ---------------------------------------
 \section{Plan and Budget}
 
-\begin{itemize}
-\color{red}
-    \item Outline the study plan (partners, schedule, etc)
-    \item Put in full study budget.  	
-\end{itemize}
+\newthought{VO will lead} the execution of the study. This will
+include printing and stickering both the test and control booklets,
+and shipping them to its distributed network of outreach coordinators (OC).
+The OCs will hand out the leaflets over a two week period, and field
+Part 1 survey responses on its survey website (\textbf{isurverysite.com}).
+After the wait time has elapsed, VO will send out the email invitation
+to participate in Part II of the survey, which will be taken at the same
+survey website used during Part I. This timeline is summarized below.
 
 \begin{fullwidth}
 {
@@ -245,6 +374,11 @@ survey. d
 }
 \end{fullwidth}
 
+The main cost drivers for the study are listed in Table \ref{tab:budget}, along
+with the cost sharing between partner organizations. Based on this plan,
+VO will be contributing \textbf{\$\totalvo} to the study (primarily in labor) 
+and ACE will be contributing \textbf{\$\totalrequest}. Note that VOs labor contribution
+does not count the time-value of the study team.
 
 \begin{table*}
   \fontfamily{ppl}\selectfont
@@ -252,25 +386,13 @@ survey. d
     \toprule
     Category  & Cost & Partner \\
     \midrule
-    
     Attaching stickers  & 22500.0 & Vegan Outreach\\                
-    
-    Leafleting (Small School)  & 4500.0 & Vegan Outreach\\                
-    
-    Leafleting (Large School)  & 4500.0 & Humane League\\                
-    
+    Leafleting  & 9000.0 & Vegan Outreach\\                
     \midrule
-                               
-    Test Booklets  & 5250.0 & Vegan Outreach\\                                    
-                               
-    Control Booklets  & 5250.0 & Vegan Outreach\\                                    
-                               
+    Booklets  & 7500.0 & Vegan Outreach\\                                                        
     Stickers  & 22500.0 & ACE\\                                    
-         
     \midrule
-                               
-    Gift Cards  & 67500.0 & ACE\\                                    
-         
+    Gift Cards  & 112500.0 & ACE\\                                    
     \bottomrule
   \end{tabular}
   \vskip 1.5em
@@ -278,9 +400,11 @@ survey. d
   \label{tab:budget}
 \end{table*}
 
-% ---------------------------------------
-% ---------------------------------------
-%\section{Closing Thoughts}\label{sec:close}
+\clearpage
 
+
+\includepdf[pages={-}]{resumes/jack_norris_cv.pdf}
+\includepdf[pages={-}]{resumes/jonathon_smith_cv.pdf}
+\includepdf[pages={-}]{VO_LES_methods.pdf}
 
 \end{document}  
