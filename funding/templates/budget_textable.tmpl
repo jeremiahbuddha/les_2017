@@ -4,7 +4,6 @@
 \newcommand{\schoolnum}[0]{\textsc{ {{summary['num_schools']}}  }}
 \newcommand{\giftcardcost}[0]{\textsc{ {{summary['card_cost']}}  }}
 \newcommand{\stickercost}[0]{\textsc{ {{summary['sticker_cost']}}  }}                  
-\newcommand{\websitecost}[0]{\textsc{ {{summary['website_cost']}} }}
 \newcommand{\totalrequest}[0]{\textsc{ {{summary['ace_total']}}  }} 
 \newcommand{\totalvo}[0]{\textsc{ {{summary['vo_total']}}  }}             
 
@@ -26,6 +25,10 @@
     {% for category, cost, partner in incentive_budget %}                           
     {{category}}  & {{cost}} & {{partner}}\\                                    
     {% endfor %}     
+    \midrule
+    Totals & & \\
+    Vegan Outreach & {{summary['vo_total']}} & \\
+    ACE & {{summary['ace_total']}} & \\
     \bottomrule
   \end{tabular}
   \vskip 1.5em

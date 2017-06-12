@@ -12,8 +12,6 @@ TEX_TABLE = True
 # =====================================================================
 # Inputs
 
-WEBSITE_COST = 12000. # Total wag, not even sure want this
-
 # Define price variables
 price_test_booklet = 0.07 # USD per item
 price_cntrl_booklet = 0.03 # USD per item
@@ -25,8 +23,8 @@ price_incentive = 15 # USD per survey
 
 # Define survey variables
 R_RATE = 0.05 # survey response rate
-NB_TEST = 75000
-NB_CNTRL = 75000
+NB_TEST = 65000
+NB_CNTRL = 0
 NB_TOTAL  = NB_TEST + NB_CNTRL
 
 print("\n### Vegan Outreach Budget Summary for LES")
@@ -62,11 +60,11 @@ print("   ... Vegan Outreach Labor Donation: ${0}".format( labor_total ))
 
 vo_total += school_labor_cost
 
-sticker_rate = 100. # per hour
+sticker_rate = 240. # per hour
 sticker_labor_cost = ( NB_TOTAL / sticker_rate ) * price_labor
 print("\n   Attaching stickers to booklets at the rate of {0}/hr".format(sticker_rate))
 print("   will require a total of {0} hrs for the study.".format(NB_TOTAL / sticker_rate))
-print("   ... Vegan Outreach Labor Donation: ${0}".format(sticker_labor_cost))
+print("   ... Vegan Outreach Labor Donation: ${0}".format(int(sticker_labor_cost)))
 
 vo_total += sticker_labor_cost
 
@@ -135,7 +133,6 @@ summary = {
    'num_schools' : num_schools,
    'num_cards' : NB_TOTAL * R_RATE,
    'sticker_cost' : sticker_cost,
-   'website_cost' : WEBSITE_COST,
    'card_cost' : incentive_cost,
    'ace_total' : ace_total,
    'vo_total'  : vo_total,
